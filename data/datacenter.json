@@ -1,0 +1,1683 @@
+{
+  "type" : "FeatureCollection",
+  "features" : [
+    {
+      "type" : "Feature",
+      "id" : 0,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7155884605266380,
+          -3313597546765070
+        ]
+      },
+      "properties" : {
+        "FID" : 0,
+        "Nombre_Dat" : "Scala Campus Curauma: Data Center SSCLCR01",
+        "Propietari" : "Scala Chile Data Centers SpA",
+        "Empresa_cl" : "DigitalBridge Group, Inc.",
+        "Tipo" : "Colocación",
+        "MW_actual" : "5 MW (edificio SSCLCR01)",
+        "MW_máximo" : "30–45 MW (campus Curauma; cifra varía según la fuente)",
+        "Comuna" : "Valparaiso",
+        "Dirección" : "Avenida Tupungato 3371",
+        "Coordenada" : "-33.13597546765075, -71.55884605266382",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 1,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7155884605266380,
+          -3313597546765070
+        ]
+      },
+      "properties" : {
+        "FID" : 1,
+        "Nombre_Dat" : "Scala Campus Curauma: Data Center SSCLCR02",
+        "Propietari" : "Scala Chile Data Centers SpA",
+        "Empresa_cl" : "DigitalBridge Group, Inc.",
+        "Tipo" : "Colocación",
+        "MW_actual" : "0 (en construcción)",
+        "MW_máximo" : "30–45 MW (campus Curauma, compartido con SSCLCR01)",
+        "Comuna" : "Valparaiso",
+        "Dirección" : "Avenida Tupungato 3371",
+        "Coordenada" : "-33.13597546765075, -71.55884605266382",
+        "Estado" : "En construccion"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 2,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7073948791877890,
+          -3329317077518990
+        ]
+      },
+      "properties" : {
+        "FID" : 2,
+        "Nombre_Dat" : "Scala Campus Lampa: Data Center SSCLLP01",
+        "Propietari" : "Scala Chile Data Centers SpA",
+        "Empresa_cl" : "DigitalBridge Group, Inc.",
+        "Tipo" : "Colocación",
+        "MW_actual" : "30 MW (entrega inicial)",
+        "MW_máximo" : "120 MW (campus completo)",
+        "Comuna" : "Lampa",
+        "Dirección" : "El Lucero 1184 (Camino El Lucero)",
+        "Coordenada" : "-33.29317077518997, -70.73948791877895",
+        "Estado" : "En construccion"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 3,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7073948791877890,
+          -3329317077518990
+        ]
+      },
+      "properties" : {
+        "FID" : 3,
+        "Nombre_Dat" : "Scala Campus Lampa: Data Center SSCLLP02",
+        "Propietari" : "Scala Chile Data Centers SpA",
+        "Empresa_cl" : "DigitalBridge Group, Inc.",
+        "Tipo" : "Colocación",
+        "MW_actual" : "No disponible (fase posterior)",
+        "MW_máximo" : "120 MW (campus completo, compartido con SSCLLP01)",
+        "Comuna" : "Lampa",
+        "Dirección" : "El Lucero 1184 (Camino El Lucero)",
+        "Coordenada" : "-33.29317077518997, -70.73948791877895",
+        "Estado" : "En construccion"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 4,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -70675152,
+          -33366762
+        ]
+      },
+      "properties" : {
+        "FID" : 4,
+        "Nombre_Dat" : "Scala Campus Huechuraba: Data Center SSCLHB01",
+        "Propietari" : "Scala Chile Data Centers SpA",
+        "Empresa_cl" : "DigitalBridge Group, Inc.",
+        "Tipo" : "Colocación",
+        "MW_actual" : "7,2 MW",
+        "MW_máximo" : "7,2 MW",
+        "Comuna" : "Huechuraba",
+        "Dirección" : "Av. Santa Marta de Huechuraba 6116",
+        "Coordenada" : "-33.366762,-70.675152",
+        "Estado" : "En construccion"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 5,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -70675152,
+          -33366762
+        ]
+      },
+      "properties" : {
+        "FID" : 5,
+        "Nombre_Dat" : "Scala Campus Huechuraba: Data Center SSCLHB02",
+        "Propietari" : "Scala Chile Data Centers SpA",
+        "Empresa_cl" : "DigitalBridge Group, Inc.",
+        "Tipo" : "Colocación",
+        "MW_actual" : "No disponible (en construcción)",
+        "MW_máximo" : "24 MW",
+        "Comuna" : "Huechuraba",
+        "Dirección" : "Av. Américo Vespucio 1573",
+        "Coordenada" : "-33.366762,-70.675152",
+        "Estado" : "En construccion"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 6,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -707358264011693,
+          -3324241736526420
+        ]
+      },
+      "properties" : {
+        "FID" : 6,
+        "Nombre_Dat" : "Claro Data Center Liray",
+        "Propietari" : "Claro Chile",
+        "Empresa_cl" : "América Móvil",
+        "Tipo" : "Colocación / nube / servicios empresariales",
+        "MW_actual" : "21 MW",
+        "MW_máximo" : "21 MW",
+        "Comuna" : "Colina",
+        "Dirección" : "Santa Marta de Liray 1120",
+        "Coordenada" : "-33.24241736526422, -70.7358264011693",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 7,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7062197051877370,
+          -3338204148011910
+        ]
+      },
+      "properties" : {
+        "FID" : 7,
+        "Nombre_Dat" : "Claro Data Center El Salto",
+        "Propietari" : "Claro Chile",
+        "Empresa_cl" : "América Móvil",
+        "Tipo" : "Colocación / carrier-neutral",
+        "MW_actual" : "1.8 MW",
+        "MW_máximo" : "1.8 MW",
+        "Comuna" : "Huechuraba",
+        "Dirección" : "Avenida El Salto 5450",
+        "Coordenada" : "-33.38204148011918, -70.62197051877372",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 8,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -707278079042455,
+          -3330690716481560
+        ]
+      },
+      "properties" : {
+        "FID" : 8,
+        "Nombre_Dat" : "Odata Data Center ST01",
+        "Propietari" : "Odata Chile Spa",
+        "Empresa_cl" : "Aligned Data Centers: Artificial Intelligence Infrastructure Partnership (AIP), MGX y Global Infrastructure Partners (GIP) de BlackRock",
+        "Tipo" : "Hiperescala / colocation hyperscale",
+        "MW_actual" : "~39–40 MW (estimado)",
+        "MW_máximo" : "~80 MW combinados con ST02 (campus Chile)",
+        "Comuna" : "Lampa",
+        "Dirección" : "Av. Presidente Eduardo Frei Montalva km 17 (N° 17400)",
+        "Coordenada" : "-33.30690716481569, -70.7278079042455",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 9,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+        ]
+      },
+      "properties" : {
+        "FID" : 9,
+        "Nombre_Dat" : "Odata Data Center ST02",
+        "Propietari" : "Odata Chile Spa",
+        "Empresa_cl" : "Aligned Data Centers: Artificial Intelligence Infrastructure Partnership (AIP), MGX y Global Infrastructure Partners (GIP) de BlackRock",
+        "Tipo" : "Hiperescala / colocation hyperscale",
+        "MW_actual" : "40,6 MW",
+        "MW_máximo" : "40,6 MW",
+        "Comuna" : "San Bernardo",
+        "Dirección" : "Avenida Lo Espejo 03474 (también referenciado en la zona de Camino San Esteban 1365)",
+        "Coordenada" : "-33.53089816543508, -70.7084496119442",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 10,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+        ]
+      },
+      "properties" : {
+        "FID" : 10,
+        "Nombre_Dat" : "EdgeConnex Santiago SCL01",
+        "Propietari" : "EdgeConneX Chile SpA",
+        "Empresa_cl" : "EQT Infrastructure",
+        "Tipo" : "Colocación mayorista / wholesale",
+        "MW_actual" : "7 MW",
+        "MW_máximo" : "7 MW",
+        "Comuna" : "Colina",
+        "Dirección" : "Carretera General San Martín 8400",
+        "Coordenada" : "-33.296883,-70.702612",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 11,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -70702612,
+          -33296883
+        ]
+      },
+      "properties" : {
+        "FID" : 11,
+        "Nombre_Dat" : "EdgeConneX Santiago SCL02",
+        "Propietari" : "EdgeConneX Chile SpA",
+        "Empresa_cl" : "EQT Infrastructure",
+        "Tipo" : "Colocación mayorista / wholesale",
+        "MW_actual" : "14 MW",
+        "MW_máximo" : "14 MW",
+        "Comuna" : "Colina",
+        "Dirección" : "Carretera General San Martín 8400",
+        "Coordenada" : "-33.296883,-70.702612",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 12,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -70702612,
+          -33296883
+        ]
+      },
+      "properties" : {
+        "FID" : 12,
+        "Nombre_Dat" : "EdgeConneX Santiago SCL03",
+        "Propietari" : "EdgeConneX Chile SpA",
+        "Empresa_cl" : "EQT Infrastructure",
+        "Tipo" : "Colocación mayorista / wholesale",
+        "MW_actual" : "0 (proyecto)",
+        "MW_máximo" : "7 MW previstos",
+        "Comuna" : "Colina",
+        "Dirección" : "Carretera General San Martín 8400",
+        "Coordenada" : "-33.296883,-70.702612",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 13,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -70702612,
+          -33296883
+        ]
+      },
+      "properties" : {
+        "FID" : 13,
+        "Nombre_Dat" : "EdgeConneX Santiago SCL04",
+        "Propietari" : "EdgeConneX Chile SpA",
+        "Empresa_cl" : "EQT Infrastructure",
+        "Tipo" : "Colocación mayorista / wholesale",
+        "MW_actual" : "0 (proyecto)",
+        "MW_máximo" : "33 MW previstos",
+        "Comuna" : "Colina",
+        "Dirección" : "Carretera General San Martín 8400",
+        "Coordenada" : "-33.296883,-70.702612",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 14,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+        ]
+      },
+      "properties" : {
+        "FID" : 14,
+        "Nombre_Dat" : "Data Center GTD Panamericana",
+        "Propietari" : "Gtdata Holdco SpA",
+        "Empresa_cl" : "Grupo Gtd e InfraCorp",
+        "Tipo" : "Colocación",
+        "MW_actual" : "8 MW (en expansión)",
+        "MW_máximo" : "8 MW (con capacidad de expansión)",
+        "Comuna" : "Conchalí",
+        "Dirección" : "Avenida Presidente Eduardo Frei Montalva 3615",
+        "Coordenada" : "-33.397590521344256, -70.6846364202874",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 15,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+        ]
+      },
+      "properties" : {
+        "FID" : 15,
+        "Nombre_Dat" : "Data Center GTD Lídice II",
+        "Propietari" : "Gtdata Holdco SpA",
+        "Empresa_cl" : "Grupo Gtd e InfraCorp",
+        "Tipo" : "Colocación",
+        "MW_actual" : "No disponible",
+        "MW_máximo" : "No disponible",
+        "Comuna" : "Santiago",
+        "Dirección" : "Lídice 652",
+        "Coordenada" : "-33.435384990002845, -70.64917944715717",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 16,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+        ]
+      },
+      "properties" : {
+        "FID" : 16,
+        "Nombre_Dat" : "Data Center GTD Puerto Montt",
+        "Propietari" : "Gtdata Holdco SpA",
+        "Empresa_cl" : "Grupo Gtd e InfraCorp",
+        "Tipo" : "Colocación",
+        "MW_actual" : "No disponible",
+        "MW_máximo" : "No disponible",
+        "Comuna" : "Puerto Montt",
+        "Dirección" : "Ruta 5 Sur 1028 (Sector Alto Bonito)",
+        "Coordenada" : "-41.48604255412837, -73.02099217591547",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 17,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+        ]
+      },
+      "properties" : {
+        "FID" : 17,
+        "Nombre_Dat" : "Data Center Ascenty Santiago SCL1",
+        "Propietari" : "Ascenty Chile SpA",
+        "Empresa_cl" : "Digital Realty y Brookfield Infrastructure Partners",
+        "Tipo" : "Colocación / carrier-neutral",
+        "MW_actual" : "10 MW",
+        "MW_máximo" : "10 MW",
+        "Comuna" : "Quilicura",
+        "Dirección" : "Guacolda 2100",
+        "Coordenada" : "-33.337112963235505, -70.70491455277217",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 18,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+        ]
+      },
+      "properties" : {
+        "FID" : 18,
+        "Nombre_Dat" : "Data Center Ascenty Santiago SCL2",
+        "Propietari" : "Ascenty Chile SpA",
+        "Empresa_cl" : "Digital Realty y Brookfield Infrastructure Partners",
+        "Tipo" : "Colocación / carrier-neutral",
+        "MW_actual" : "16 MW",
+        "MW_máximo" : "16 MW",
+        "Comuna" : "Quilicura",
+        "Dirección" : "Guacolda 2100",
+        "Coordenada" : "-33.337112963235505, -70.70491455277217",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 19,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+        ]
+      },
+      "properties" : {
+        "FID" : 19,
+        "Nombre_Dat" : "Data Center Ascenty Santiago SCL3",
+        "Propietari" : "Ascenty Chile SpA",
+        "Empresa_cl" : "Digital Realty y Brookfield Infrastructure Partners",
+        "Tipo" : "Colocación / carrier-neutral",
+        "MW_actual" : "16 MW",
+        "MW_máximo" : "16 MW",
+        "Comuna" : "Quilicura",
+        "Dirección" : "Guacolda 2100",
+        "Coordenada" : "-33.337112963235505, -70.70491455277217",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 20,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7069818997644750,
+          -3333258449584800
+        ]
+      },
+      "properties" : {
+        "FID" : 20,
+        "Nombre_Dat" : "Data Hall Quilicura: Data Center Ascenty Santiago SCL4",
+        "Propietari" : "Ascenty Chile SpA",
+        "Empresa_cl" : "Digital Realty y Brookfield Infrastructure Partners",
+        "Tipo" : "Colocación / carrier-neutral",
+        "MW_actual" : "0 (en construcción)",
+        "MW_máximo" : "75 MW",
+        "Comuna" : "Quilicura",
+        "Dirección" : "Caupolicán 9550",
+        "Coordenada" : "-33.33258449584807, -70.69818997644755",
+        "Estado" : "En construccion"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 21,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7069818997644750,
+          -3333258449584800
+        ]
+      },
+      "properties" : {
+        "FID" : 21,
+        "Nombre_Dat" : "Data Hall Quilicura: Data Center Ascenty Santiago SCL5",
+        "Propietari" : "Ascenty Chile SpA",
+        "Empresa_cl" : "Digital Realty y Brookfield Infrastructure Partners",
+        "Tipo" : "Colocación / carrier-neutral",
+        "MW_actual" : "0 (en construcción)",
+        "MW_máximo" : "75 MW",
+        "Comuna" : "Quilicura",
+        "Dirección" : "Caupolicán 9550",
+        "Coordenada" : "-33.33258449584807, -70.69818997644755",
+        "Estado" : "En construccion"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 22,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7069606878994080,
+          -3333771481638180
+        ]
+      },
+      "properties" : {
+        "FID" : 22,
+        "Nombre_Dat" : "Microsoft SCL03",
+        "Propietari" : "Microsoft Datacenter Chile Limitada",
+        "Empresa_cl" : "Microsoft",
+        "Tipo" : "Hiperescala / cloud",
+        "MW_actual" : "No disponible (Microsoft no publica MW)",
+        "MW_máximo" : "No disponible (Microsoft no publica MW)",
+        "Comuna" : "Quilicura",
+        "Dirección" : "Caupolicán 8680",
+        "Coordenada" : "-33.33771481638184, -70.69606878994082",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 23,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -707005026420656,
+          -3335683589845690
+        ]
+      },
+      "properties" : {
+        "FID" : 23,
+        "Nombre_Dat" : "Data Center Cirion SAN2",
+        "Propietari" : "Cirion Technologies Chile S.A.",
+        "Empresa_cl" : "Stonepeak Partners LP",
+        "Tipo" : "Colocación carrier-neutral / infraestructura hyperscale-class",
+        "MW_actual" : "20 MW",
+        "MW_máximo" : "20 MW",
+        "Comuna" : "Quilicura",
+        "Dirección" : "Víctor Uribe 2259",
+        "Coordenada" : "-33.35683589845698, -70.7005026420656",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 24,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7067577390976440,
+          -33357965436650100
+        ]
+      },
+      "properties" : {
+        "FID" : 24,
+        "Nombre_Dat" : "Data Center Cirion SAN1",
+        "Propietari" : "Cirion Technologies Chile S.A.",
+        "Empresa_cl" : "Stonepeak Partners LP",
+        "Tipo" : "Colocación carrier-neutral",
+        "MW_actual" : "4 MW",
+        "MW_máximo" : "4 MW",
+        "Comuna" : "Huechuraba",
+        "Dirección" : "Avenida Santa Marta de Huechuraba 6951",
+        "Coordenada" : "-33.357965436650176, -70.67577390976443",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 25,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -706988998034333,
+          -33356052513988600
+        ]
+      },
+      "properties" : {
+        "FID" : 25,
+        "Nombre_Dat" : "Sonda Campus Quilicura: DCQ1",
+        "Propietari" : "Sonda S.A.",
+        "Empresa_cl" : " ",
+        "Tipo" : "Colocación",
+        "MW_actual" : "12 MW (total campus DCQ1 y Kudos)",
+        "MW_máximo" : "12 MW (total campus DCQ1 y Kudos)",
+        "Comuna" : "Quilicura",
+        "Dirección" : "Víctor Uribe 2211",
+        "Coordenada" : "-33.356052513988644, -70.6988998034333",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 26,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -706988998034333,
+          -33356052513988600
+        ]
+      },
+      "properties" : {
+        "FID" : 26,
+        "Nombre_Dat" : "Sonda Campus Quilicura: Kudos",
+        "Propietari" : "Sonda S.A.",
+        "Empresa_cl" : " ",
+        "Tipo" : "Colocación",
+        "MW_actual" : "12 MW (total campus DCQ1 y Kudos)",
+        "MW_máximo" : "12 MW (total campus DCQ1 y Kudos)",
+        "Comuna" : "Quilicura",
+        "Dirección" : "Víctor Uribe 2211",
+        "Coordenada" : "-33.356052513988644, -70.6988998034333",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 27,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7065578493283630,
+          -334374433374347
+        ]
+      },
+      "properties" : {
+        "FID" : 27,
+        "Nombre_Dat" : "Sonda Datacenter Teatinos",
+        "Propietari" : "Sonda S.A.",
+        "Empresa_cl" : " ",
+        "Tipo" : "Colocación",
+        "MW_actual" : "No disponible",
+        "MW_máximo" : "No disponible",
+        "Comuna" : "Santiago",
+        "Dirección" : "Teatinos 500",
+        "Coordenada" : "-33.4374433374347, -70.65578493283631",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 28,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -70697245167717,
+          -3335838013761440
+        ]
+      },
+      "properties" : {
+        "FID" : 28,
+        "Nombre_Dat" : "Google Chile Data Center Quilicura",
+        "Propietari" : "Inversiones y Servicios Dataluna Ltda.",
+        "Empresa_cl" : "Google LLC",
+        "Tipo" : "Hiperescala / cloud",
+        "MW_actual" : "No confirmado por la empresa",
+        "MW_máximo" : "No confirmado por la empresa",
+        "Comuna" : "Quilicura",
+        "Dirección" : "El Molino 2130",
+        "Coordenada" : "-33.35838013761444, -70.697245167717",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 29,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7072218123410740,
+          -3351939082575840
+        ]
+      },
+      "properties" : {
+        "FID" : 29,
+        "Nombre_Dat" : "Google Chile Data Center Cerrillos",
+        "Propietari" : "Inversiones y Servicios Dataluna Ltda.",
+        "Empresa_cl" : "Google LLC",
+        "Tipo" : "Hiperescala / cloud",
+        "MW_actual" : "No confirmado por la empresa",
+        "MW_máximo" : "No confirmado por la empresa",
+        "Comuna" : "Cerrillos",
+        "Dirección" : "Camino a Lonquén N°9600",
+        "Coordenada" : "-33.51939082575846, -70.72218123410745",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 30,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -706612335843936,
+          -3337388362125010
+        ]
+      },
+      "properties" : {
+        "FID" : 30,
+        "Nombre_Dat" : "Centro de Almacenamiento de Datos Huechuraba",
+        "Propietari" : "Servicios Amazon Data Services Chile SpA",
+        "Empresa_cl" : "Amazon Web Services, Inc.",
+        "Tipo" : "Hiperescala / cloud",
+        "MW_actual" : "0 (en construcción)",
+        "MW_máximo" : "No disponible (AWS no publica MW)",
+        "Comuna" : "Huechuraba",
+        "Dirección" : "Américo Vespucio N° 1055",
+        "Coordenada" : "-33.37388362125015, -70.6612335843936",
+        "Estado" : "En construccion"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 31,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7081262685107710,
+          -3355867482195980
+        ]
+      },
+      "properties" : {
+        "FID" : 31,
+        "Nombre_Dat" : "Centro de Almacenamiento de Datos Padre Hurtado",
+        "Propietari" : "Servicios Amazon Data Services Chile SpA",
+        "Empresa_cl" : "Amazon Web Services, Inc.",
+        "Tipo" : "Hiperescala / cloud",
+        "MW_actual" : "0 (en construcción)",
+        "MW_máximo" : "No disponible (AWS no publica MW)",
+        "Comuna" : "Padre Hurtado",
+        "Dirección" : "Rodolfo Jaramillo N° 1351",
+        "Coordenada" : "-33.55867482195981, -70.81262685107718",
+        "Estado" : "En construccion"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 32,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7060773699587170,
+          -33633986723373400
+        ]
+      },
+      "properties" : {
+        "FID" : 32,
+        "Nombre_Dat" : "Centro de Almacenamiento de Datos Puente Alto",
+        "Propietari" : "Servicios Amazon Data Services Chile SpA",
+        "Empresa_cl" : "Amazon Web Services, Inc.",
+        "Tipo" : "Hiperescala / cloud",
+        "MW_actual" : "0 (en construcción)",
+        "MW_máximo" : "No disponible (AWS no publica MW)",
+        "Comuna" : "Puente Alto",
+        "Dirección" : "Autopista Acceso Sur a Santiago (Tramo Santiago-Talca) N°2830",
+        "Coordenada" : "-33.633986723373475, -70.60773699587172",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 33,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7162004291207640,
+          -3308487465737460
+        ]
+      },
+      "properties" : {
+        "FID" : 33,
+        "Nombre_Dat" : "Data Center La Pólvora",
+        "Propietari" : "DCI La Polvora Spa",
+        "Empresa_cl" : "DCI Data Partners Spa",
+        "Tipo" : "Desarrollo mayorista / hyperscale-ready",
+        "MW_actual" : "0 (en construcción)",
+        "MW_máximo" : "75 MW",
+        "Comuna" : "Valparaiso",
+        "Dirección" : "Camino La Pólvora (Ruta 60/VE-5V, Via Expresa PREMVAL)",
+        "Coordenada" : "-33.08487465737466, -71.62004291207649",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 34,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -70716531,
+          -32765187
+        ]
+      },
+      "properties" : {
+        "FID" : 34,
+        "Nombre_Dat" : "Data Center San Felipe",
+        "Propietari" : " ",
+        "Empresa_cl" : "DCI Data Partners Spa",
+        "Tipo" : "Desarrollo mayorista / hyperscale-ready",
+        "MW_actual" : "0 (en construcción)",
+        "MW_máximo" : "80 MW",
+        "Comuna" : "San Felipe",
+        "Dirección" : "Aproximado",
+        "Coordenada" : "-32.765187, -70.716531",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 35,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -707673924881814,
+          -3331900004274320
+        ]
+      },
+      "properties" : {
+        "FID" : 35,
+        "Nombre_Dat" : "Campo de Datos Lampa",
+        "Propietari" : "CI GMF II Chile DevCo I Spa",
+        "Empresa_cl" : "Copenhagen Infraestructure Partners",
+        "Tipo" : "Hiperescala",
+        "MW_actual" : "No disponible",
+        "MW_máximo" : "No disponible",
+        "Comuna" : "Lampa",
+        "Dirección" : "Avenida El Alfalfal Oriente, Parcela 10, Lotes 1 al 5",
+        "Coordenada" : "-33.31900004274321, -70.7673924881814",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 36,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -70698615379278,
+          -3370691870894700
+        ]
+      },
+      "properties" : {
+        "FID" : 36,
+        "Nombre_Dat" : "Data Center Alto Jahuel Campus Sur",
+        "Propietari" : "GR Huiña SPA",
+        "Empresa_cl" : "Grenergy Renovables S.A.",
+        "Tipo" : "Hiperescala / cloud",
+        "MW_actual" : "0 (proyecto)",
+        "MW_máximo" : "600 MW (combinado con Polpaico Campus Norte)",
+        "Comuna" : "Buin",
+        "Dirección" : "Acceso Sur, cerca de Camino Los Tilos",
+        "Coordenada" : "-33.70691870894702, -70.698615379278",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 37,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -69492280,
+          -22160090
+        ]
+      },
+      "properties" : {
+        "FID" : 37,
+        "Nombre_Dat" : "Atacama Data",
+        "Propietari" : " ",
+        "Empresa_cl" : "Grenergy Renovables S.A.",
+        "Tipo" : "Hiperescala / IA",
+        "MW_actual" : "0 (proyecto)",
+        "MW_máximo" : "400 MW iniciales, escalables a 1 GW",
+        "Comuna" : "María Elena",
+        "Dirección" : "Aproximado",
+        "Coordenada" : "-22.160090, -69.492280",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 38,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7085353108196830,
+          -3319647582369130
+        ]
+      },
+      "properties" : {
+        "FID" : 38,
+        "Nombre_Dat" : "Data Center Polpaico Campus Norte",
+        "Propietari" : " ",
+        "Empresa_cl" : "Grenergy Renovables S.A.",
+        "Tipo" : "Hiperescala / cloud",
+        "MW_actual" : "0 (proyecto)",
+        "MW_máximo" : "600 MW (combinado con Alto Jahuel Campus Sur)",
+        "Comuna" : "Til Til",
+        "Dirección" : "Referencia general",
+        "Coordenada" : "-33.19647582369137, -70.85353108196834",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 39,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7068923266648560,
+          -3371964650337430
+        ]
+      },
+      "properties" : {
+        "FID" : 39,
+        "Nombre_Dat" : "Data Center Alto Jahuel",
+        "Propietari" : "DC Terranova SPA",
+        "Empresa_cl" : "Inversiones FR Limitada",
+        "Tipo" : "Por definir",
+        "MW_actual" : "No disponible",
+        "MW_máximo" : "No disponible",
+        "Comuna" : "Buin",
+        "Dirección" : "Camino a Guindo – Los Tilos 3810",
+        "Coordenada" : "-33.71964650337437, -70.68923266648562",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 40,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7161003219042720,
+          -3308981570357560
+        ]
+      },
+      "properties" : {
+        "FID" : 40,
+        "Nombre_Dat" : "Data Center Valparaiso 1",
+        "Propietari" : "FR DATA SpA",
+        "Empresa_cl" : "Inversiones FR Limitada",
+        "Tipo" : "Por definir",
+        "MW_actual" : "No disponible",
+        "MW_máximo" : " ",
+        "Comuna" : "Valparaiso",
+        "Dirección" : " ",
+        "Coordenada" : "-33.08981570357561, -71.61003219042722",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 41,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7160994149119080,
+          -3308964744609700
+        ]
+      },
+      "properties" : {
+        "FID" : 41,
+        "Nombre_Dat" : "Data Center Valparaiso 2",
+        "Propietari" : "FR DATA SpA",
+        "Empresa_cl" : "Inversiones FR Limitada",
+        "Tipo" : "Por definir",
+        "MW_actual" : "No disponible",
+        "MW_máximo" : " ",
+        "Comuna" : "Valparaiso",
+        "Dirección" : " ",
+        "Coordenada" : "-33.08964744609705, -71.60994149119082",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 42,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7061636590527980,
+          -3338655898192230
+        ]
+      },
+      "properties" : {
+        "FID" : 42,
+        "Nombre_Dat" : "Data Center Magnus II",
+        "Propietari" : "Ufinet Chile SpA/IFX Networks Chile S.A.",
+        "Empresa_cl" : "Ufinet Latam S.L.",
+        "Tipo" : "Colocación (pequeña escala)",
+        "MW_actual" : "2.0 MW",
+        "MW_máximo" : "2.0 MW",
+        "Comuna" : "Huechuraba",
+        "Dirección" : "Avenida Los Jardines 927",
+        "Coordenada" : "-33.38655898192231, -70.61636590527989",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 43,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7061696613699340,
+          -3338722522662020
+        ]
+      },
+      "properties" : {
+        "FID" : 43,
+        "Nombre_Dat" : "Data Center Magnus I",
+        "Propietari" : "Ufinet Chile SpA/IFX Networks Chile S.A.",
+        "Empresa_cl" : "Ufinet Latam S.L.",
+        "Tipo" : "Colocación (pequeña escala)",
+        "MW_actual" : "1.0 MW estimado",
+        "MW_máximo" : "1.0 MW estimado",
+        "Comuna" : "Huechuraba",
+        "Dirección" : "Avenida del Valle 928",
+        "Coordenada" : "-33.38722522662021, -70.61696613699341",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 44,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -70599384,
+          -33418338
+        ]
+      },
+      "properties" : {
+        "FID" : 44,
+        "Nombre_Dat" : "IFX Elbosque Data Center",
+        "Propietari" : "Ufinet Chile SpA/IFX Networks Chile S.A.",
+        "Empresa_cl" : "Ufinet Latam S.L.",
+        "Tipo" : "Colocación (pequeña escala)",
+        "MW_actual" : "1 y 2 MW estimado",
+        "MW_máximo" : "1 y 2 MW estimado",
+        "Comuna" : "Las Condes",
+        "Dirección" : "Av. El Bosque Sur 90",
+        "Coordenada" : "-33.418338,-70.599384",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 45,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7085109666294710,
+          -3344816733010980
+        ]
+      },
+      "properties" : {
+        "FID" : 45,
+        "Nombre_Dat" : "Data Center Equinix ST1",
+        "Propietari" : "Equinix Chile SpA",
+        "Empresa_cl" : "Equinix, Inc.",
+        "Tipo" : "Colocación / interconexión",
+        "MW_actual" : "7,5 MW (combinados con ST2, ST3 y ST4)",
+        "MW_máximo" : "7,5 MW (combinados)",
+        "Comuna" : "Pudahuel",
+        "Dirección" : "Avenida Los Vientos 20239",
+        "Coordenada" : "-33.44816733010988, -70.85109666294714",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 46,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7085109666294710,
+          -3344816733010980
+        ]
+      },
+      "properties" : {
+        "FID" : 46,
+        "Nombre_Dat" : "Data Center Equinix ST2",
+        "Propietari" : "Equinix Chile SpA",
+        "Empresa_cl" : "Equinix, Inc.",
+        "Tipo" : "Colocación / interconexión",
+        "MW_actual" : "7,5 MW (combinados; posiblemente mayor tras la ampliación 2025)",
+        "MW_máximo" : "7,5 MW (combinados)",
+        "Comuna" : "Pudahuel",
+        "Dirección" : "Avenida Los Vientos 20239",
+        "Coordenada" : "-33.44816733010988, -70.85109666294714",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 47,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -706561430610991,
+          -3344361567220430
+        ]
+      },
+      "properties" : {
+        "FID" : 47,
+        "Nombre_Dat" : "Data Center Equinix ST3",
+        "Propietari" : "Equinix Chile SpA",
+        "Empresa_cl" : "Equinix, Inc.",
+        "Tipo" : "Colocación / interconexión",
+        "MW_actual" : "7,5 MW (combinados con ST1, ST2 y ST4)",
+        "MW_máximo" : "7,5 MW (combinados)",
+        "Comuna" : "Santiago",
+        "Dirección" : "Pasaje Nueva Amunategui 26, of 105",
+        "Coordenada" : "-33.44361567220438, -70.6561430610991",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 48,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -71399943,
+          -33956861
+        ]
+      },
+      "properties" : {
+        "FID" : 48,
+        "Nombre_Dat" : "Data Center Equinix ST4",
+        "Propietari" : "Equinix Chile SpA",
+        "Empresa_cl" : "Equinix, Inc.",
+        "Tipo" : "Colocación / interconexión",
+        "MW_actual" : "7,5 MW (combinados con ST1, ST2 y ST3)",
+        "MW_máximo" : "7,5 MW (combinados)",
+        "Comuna" : "San Pedro",
+        "Dirección" : "Ruta 66, Camino de la Fruta, S/N",
+        "Coordenada" : "-33.956861,-71.399943",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 49,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7078588500519300,
+          -33438730008685900
+        ]
+      },
+      "properties" : {
+        "FID" : 49,
+        "Nombre_Dat" : "Data Center Equinix ST5",
+        "Propietari" : "Equinix Chile SpA",
+        "Empresa_cl" : "Equinix, Inc.",
+        "Tipo" : "Colocación / interconexión",
+        "MW_actual" : "0 (en construcción)",
+        "MW_máximo" : "No confirmado",
+        "Comuna" : "Pudahuel",
+        "Dirección" : "Los Alerces con La Oración",
+        "Coordenada" : "-33.438730008685916, -70.78588500519302",
+        "Estado" : "En construccion"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 50,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7071157112739610,
+          -3355288761085650
+        ]
+      },
+      "properties" : {
+        "FID" : 50,
+        "Nombre_Dat" : "Kyndryl DC San Bernardo",
+        "Propietari" : "Kyndryl Chile SpA",
+        "Empresa_cl" : "Kyndryl Holdings, Inc.",
+        "Tipo" : "Colocación empresarial / servicios gestionados",
+        "MW_actual" : "No disponible",
+        "MW_máximo" : "No disponible",
+        "Comuna" : "San Bernardo",
+        "Dirección" : "Av. Puerta Sur 03320, Sitio 6",
+        "Coordenada" : "-33.55288761085657, -70.71157112739616",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 51,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7055699728993670,
+          -3340756745204460
+        ]
+      },
+      "properties" : {
+        "FID" : 51,
+        "Nombre_Dat" : "NextStream Apoquindo SCLAP01",
+        "Propietari" : "Digital Holdings Chile SpA, NextStream Data Centers",
+        "Empresa_cl" : "Actis LLP",
+        "Tipo" : "Colocación carrier-neutral",
+        "MW_actual" : "1,2 MW",
+        "MW_máximo" : "1,2 MW",
+        "Comuna" : "Las Condes",
+        "Dirección" : "Av. Apoquindo 7071",
+        "Coordenada" : "-33.40756745204467, -70.55699728993672",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 52,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7074849586525690,
+          -33812124273335900
+        ]
+      },
+      "properties" : {
+        "FID" : 52,
+        "Nombre_Dat" : "NextStream Paine 1 SCLPA01",
+        "Propietari" : "Digital Holdings Chile SpA, NextStream Data Centers",
+        "Empresa_cl" : "Actis LLP",
+        "Tipo" : "Colocación carrier-neutral",
+        "MW_actual" : "1,1 MW (fase publicada)",
+        "MW_máximo" : "No publicado; sitio Paine total 3,6 MW",
+        "Comuna" : "Paine",
+        "Dirección" : "Av. Presidente Prieto 226",
+        "Coordenada" : "-33.812124273335954, -70.74849586525696",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 53,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7074849586525690,
+          -33812124273335900
+        ]
+      },
+      "properties" : {
+        "FID" : 53,
+        "Nombre_Dat" : "NextStream Paine 2 SCLPA02",
+        "Propietari" : "Digital Holdings Chile SpA, NextStream Data Centers",
+        "Empresa_cl" : "Actis LLP",
+        "Tipo" : "Colocación carrier-neutral",
+        "MW_actual" : "Incluido en Paine 3,6 MW total; no desglosado",
+        "MW_máximo" : "No publicado individualmente",
+        "Comuna" : "Paine",
+        "Dirección" : "Av. Presidente Prieto 226",
+        "Coordenada" : "-33.812124273335954, -70.74849586525696",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 54,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7065762808476190,
+          -3344378719087830
+        ]
+      },
+      "properties" : {
+        "FID" : 54,
+        "Nombre_Dat" : "NextStream San Martín SCLSM01",
+        "Propietari" : "Digital Holdings Chile SpA, NextStream Data Centers",
+        "Empresa_cl" : "Actis LLP",
+        "Tipo" : "Colocación carrier-neutral",
+        "MW_actual" : "2,4 MW",
+        "MW_máximo" : "2,4 MW",
+        "Comuna" : "Santiago",
+        "Dirección" : "San Martín 48",
+        "Coordenada" : "-33.44378719087835, -70.65762808476195",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 55,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -70599763,
+          -33635527
+        ]
+      },
+      "properties" : {
+        "FID" : 55,
+        "Nombre_Dat" : "Data Center TECfusions Puente Alto",
+        "Propietari" : "Tecfusions y Ebaeza Empresas",
+        "Empresa_cl" : "Tecfusions/Apex Treasury Corp:",
+        "Tipo" : "Hiperescala / IA / HPC",
+        "MW_actual" : "0 (proyecto)",
+        "MW_máximo" : "100 MW (fase inicial de 10-20 MW, escalable a 100 MW)",
+        "Comuna" : "Puente Alto",
+        "Dirección" : "Probable",
+        "Coordenada" : "-33.635527, -70.599763",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 56,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+        ]
+      },
+      "properties" : {
+        "FID" : 56,
+        "Nombre_Dat" : "Oracle Data Center Valparaiso",
+        "Propietari" : "Sistemas Oracle de Chile S.A.",
+        "Empresa_cl" : "Oracle Corporation",
+        "Tipo" : "Hiperescala / cloud regional",
+        "MW_actual" : "No disponible (Oracle no publica MW)",
+        "MW_máximo" : "No disponible",
+        "Comuna" : " ",
+        "Dirección" : "NO INFORMA",
+        "Coordenada" : " ",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 57,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+        ]
+      },
+      "properties" : {
+        "FID" : 57,
+        "Nombre_Dat" : "Oracle Data Center Santiago",
+        "Propietari" : "Sistemas Oracle de Chile S.A.",
+        "Empresa_cl" : "Oracle Corporation",
+        "Tipo" : "Hiperescala / cloud regional",
+        "MW_actual" : "No disponible (Oracle no publica MW)",
+        "MW_máximo" : "No disponible",
+        "Comuna" : " ",
+        "Dirección" : "NO INFORMA",
+        "Coordenada" : " ",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 58,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+        ]
+      },
+      "properties" : {
+        "FID" : 58,
+        "Nombre_Dat" : "Huawei Cloud DC1",
+        "Propietari" : "Huawei Chile S.A.",
+        "Empresa_cl" : "Huawei Investment & Holding Co., Ltd.",
+        "Tipo" : "Cloud pública / colocation",
+        "MW_actual" : "No disponible (Huawei no publica MW)",
+        "MW_máximo" : "No disponible",
+        "Comuna" : " ",
+        "Dirección" : "NO INFORMA",
+        "Coordenada" : " ",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 59,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+        ]
+      },
+      "properties" : {
+        "FID" : 59,
+        "Nombre_Dat" : "Huawei Cloud DC2",
+        "Propietari" : "Huawei Chile S.A.",
+        "Empresa_cl" : "Huawei Investment & Holding Co., Ltd.",
+        "Tipo" : "Cloud pública / colocation",
+        "MW_actual" : "No disponible (Huawei no publica MW)",
+        "MW_máximo" : "No disponible",
+        "Comuna" : " ",
+        "Dirección" : "NO INFORMA",
+        "Coordenada" : " ",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 60,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+        ]
+      },
+      "properties" : {
+        "FID" : 60,
+        "Nombre_Dat" : "Huawei Cloud DC3",
+        "Propietari" : "Huawei Chile S.A.",
+        "Empresa_cl" : "Huawei Investment & Holding Co., Ltd.",
+        "Tipo" : "Cloud pública / colocation",
+        "MW_actual" : "No disponible",
+        "MW_máximo" : "No disponible",
+        "Comuna" : " ",
+        "Dirección" : "NO INFORMA",
+        "Coordenada" : " ",
+        "Estado" : "En operación"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 61,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7076001073274800,
+          -333097444360352
+        ]
+      },
+      "properties" : {
+        "FID" : 61,
+        "Nombre_Dat" : "DC Hermes",
+        "Propietari" : "Mytilineos BESS Chile SpA",
+        "Empresa_cl" : "Metlen Energy & Metals",
+        "Tipo" : "Por definir",
+        "MW_actual" : " ",
+        "MW_máximo" : "100 MW",
+        "Comuna" : "Lampa",
+        "Dirección" : "NO INFORMA",
+        "Coordenada" : "-33.3097444360352, -70.76001073274803",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 62,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7160999983671130,
+          -3308979053933690
+        ]
+      },
+      "properties" : {
+        "FID" : 62,
+        "Nombre_Dat" : "Data Center Pacífico 33-S",
+        "Propietari" : "IGNIS ENERGY CHILE SpA",
+        "Empresa_cl" : "Ignis Energy Holdings, S.L. / Ignis P2X, S.L.",
+        "Tipo" : "Por definir",
+        "MW_actual" : " ",
+        "MW_máximo" : "500 MW",
+        "Comuna" : "Valparaiso",
+        "Dirección" : "NO INFORMA",
+        "Coordenada" : "-33.08979053933693, -71.60999983671132",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 63,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7089999938474210,
+          -3339988951634800
+        ]
+      },
+      "properties" : {
+        "FID" : 63,
+        "Nombre_Dat" : "Data Center Noviciado I",
+        "Propietari" : "IGNIS ENERGY CHILE SpA",
+        "Empresa_cl" : "Ignis Energy Holdings, S.L. / Ignis P2X, S.L.",
+        "Tipo" : "Por definir",
+        "MW_actual" : " ",
+        "MW_máximo" : "500 MW",
+        "Comuna" : "Pudahuel",
+        "Dirección" : "NO INFORMA",
+        "Coordenada" : "-33.39988951634808, -70.89999938474213",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 64,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7086001581661630,
+          -331998374348427
+        ]
+      },
+      "properties" : {
+        "FID" : 64,
+        "Nombre_Dat" : "Data Center SC2",
+        "Propietari" : "RTB Energy SpA",
+        "Empresa_cl" : "Kinto Inversiones SpA, BDP+ SpA y El Coigüe SpA",
+        "Tipo" : "Por definir",
+        "MW_actual" : " ",
+        "MW_máximo" : "500 MW",
+        "Comuna" : "Til Til",
+        "Dirección" : "NO INFORMA",
+        "Coordenada" : "-33.1998374348427, -70.86001581661631",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 65,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -707000141532621,
+          -3333981822478250
+        ]
+      },
+      "properties" : {
+        "FID" : 65,
+        "Nombre_Dat" : "ACS DC Santiago",
+        "Propietari" : "Concesiones de Infraestructuras Chile Dos S.A.",
+        "Empresa_cl" : "ACS Group",
+        "Tipo" : "Por definir",
+        "MW_actual" : " ",
+        "MW_máximo" : "Sin información",
+        "Comuna" : "Quilicura",
+        "Dirección" : "NO INFORMA",
+        "Coordenada" : "-33.33981822478252, -70.7000141532621",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 66,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7090998927507200,
+          -3344979855791880
+        ]
+      },
+      "properties" : {
+        "FID" : 66,
+        "Nombre_Dat" : "Data Center Lo Aguirre",
+        "Propietari" : "Lader Energy Chile SpA",
+        "Empresa_cl" : "Lader Energy Chile SpA",
+        "Tipo" : "Por definir",
+        "MW_actual" : " ",
+        "MW_máximo" : "500 MW",
+        "Comuna" : "Pudahuel",
+        "Dirección" : "NO INFORMA",
+        "Coordenada" : "-33.44979855791889, -70.90998927507209",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 67,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -709100000039071,
+          -3344976275067510
+        ]
+      },
+      "properties" : {
+        "FID" : 67,
+        "Nombre_Dat" : "Data Center Lo Aguirre A",
+        "Propietari" : "Lader Energy Chile SpA",
+        "Empresa_cl" : "Lader Energy Chile SpA",
+        "Tipo" : "Por definir",
+        "MW_actual" : " ",
+        "MW_máximo" : "25 MW",
+        "Comuna" : "Pudahuel",
+        "Dirección" : "NO INFORMA",
+        "Coordenada" : "-33.44976275067512, -70.9100000039071",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 68,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -70829566,
+          -33116449
+        ]
+      },
+      "properties" : {
+        "FID" : 68,
+        "Nombre_Dat" : "Datacenter ADC-CH-Santiago",
+        "Propietari" : "Acciona Energía Chile SpA",
+        "Empresa_cl" : "Sin información",
+        "Tipo" : "Sin información",
+        "MW_actual" : "Sin información",
+        "MW_máximo" : "80 MW",
+        "Comuna" : "Til Til",
+        "Dirección" : "NO INFORMA",
+        "Coordenada" : "-33.116449, -70.829566",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 69,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7157294201588630,
+          -3360319349649020
+        ]
+      },
+      "properties" : {
+        "FID" : 69,
+        "Nombre_Dat" : "Centro de Almacenamiento de Datos San Antonio",
+        "Propietari" : "Nodo Pacífico SpA",
+        "Empresa_cl" : "Sin información",
+        "Tipo" : "Sin información",
+        "MW_actual" : "Sin información",
+        "MW_máximo" : "70 MW",
+        "Comuna" : "San Antonio",
+        "Dirección" : "NO INFORMA",
+        "Coordenada" : "-33.60319349649024, -71.57294201588633",
+        "Estado" : "Proyecto"
+      }
+    },
+    {
+      "type" : "Feature",
+      "id" : 70,
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [
+          -7069362878970300,
+          -33717883459852500
+        ]
+      },
+      "properties" : {
+        "FID" : 70,
+        "Nombre_Dat" : "Data Center Moreras",
+        "Propietari" : "Orion Power SpA",
+        "Empresa_cl" : "Sin información",
+        "Tipo" : "Sin información",
+        "MW_actual" : "Sin información",
+        "MW_máximo" : "90 MW",
+        "Comuna" : "Buin",
+        "Dirección" : "NO INFORMA",
+        "Coordenada" : "-33.717883459852516, -70.69362878970306",
+        "Estado" : "Proyecto"
+      }
+    }
+  ]
+}
