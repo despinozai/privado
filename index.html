@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Centers en Chile</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Domine:wght@400..700&family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+    <style>
+        .custom-leaflet-popup .leaflet-popup-content-wrapper {
+            border: 2px solid #166FDD !important;
+            border-radius: 0 !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+            font-family: 'Hanken Grotesk', sans-serif !important;
+            padding: 0 !important;
+        }
+
+        .custom-leaflet-popup .leaflet-popup-tip {
+            border-top-color: #166FDD !important;
+        }
+
+        .custom-leaflet-popup .leaflet-popup-content {
+            margin: 12px !important;
+            font-size: 13px !important;
+            line-height: 1.4 !important;
+            color: #1a1c1c !important;
+            min-width: 220px !important;
+            max-width: 340px !important;
+        }
+
+        #companyList::-webkit-scrollbar { width: 4px; }
+        #companyList::-webkit-scrollbar-track { background: #f3f3f4; }
+        #companyList::-webkit-scrollbar-thumb { background: #166FDD; }
+
+        #map {
+            height: 580px;
+            width: 100%;
+            background-color: #f0f0f0;
+        }
+
+        /* Marcadores base */
+        .data-marker-operacion,
+        .data-marker-construccion,
+        .data-marker-proyecto {
+            border-radius: 50%;
+            border: 3px solid white;
+            box-sizing: border-box;
+        }
+
+        .data-marker-operacion {
+            background-color: #16A34A;
+            box-shadow: 0 0 0 2px #4c4546;
+        }
+        .data-marker-construccion {
+            background-color: #F66C1A;
+            box-shadow: 0 0 0 2px #4c4546;
+        }
+        .data-marker-proyecto {
+            background-color: #166FDD;
+            box-shadow: 0 0 0 2px #4c4546;
+        }
+
+        .marker-cluster { background-color: rgba(246, 108, 26, 0.6); }
+        .marker-cluster div {
+            background-color: rgba(246, 108, 26, 0.9);
+            color: white;
+            font-weight: bold;
+            font-family: 'Archivo Narrow', sans-serif;
+        }
+
+        .rank-card {
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .rank-card:hover {
+            background-color: #f9f9f9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(22, 111, 221, 0.15);
+        }
+
+        .legend-item {
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: all 0.15s ease;
+        }
+        .legend-item:hover {
+            background-color: #ffffff;
+            border-color: #166FDD;
+        }
+        .legend-item.active {
+            background-color: #ffffff;
+            border-color: #166FDD;
+            box-shadow: 0 0 0 1px #166FDD inset;
+        }
+        .legend-count {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-weight: 700;
+            font-size: 11px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-[#f9f9f9] text-[#1a1c1c] font-['Hanken_Grotesk'] font-light antialiased m-0 p-0 selection:bg-[#F66C1A] selection:text-white">
+
+    <div
+        class="max-w-[1440px] mx-auto px-3 py-4 md:px-4 md:py-6 bg-white min-h-screen border-x border-[#166FDD]/20 shadow-sm">
+
+        <div class="border border-[#166FDD] bg-white">
+
+            <!-- Cabecera -->
+            <div class="flex justify-between items-center px-4 py-2.5 border-b border-[#166FDD] bg-[#f4f4f4]">
+                <h2
+                    class="font-['Archivo_Narrow'] text-[13px] font-bold uppercase tracking-wider text-[#166FDD] m-0 flex items-center gap-2">
+                    <span class="text-[#F66C1A]">●</span> MAPA DE DATA CENTERS EN CHILE
+                </h2>
+                <span class="text-xs text-[#4c4546] font-['Hanken_Grotesk']" id="mapCount">Cargando datos...</span>
+            </div>
+
+            <!-- Filtros -->
+            <div class="flex flex-wrap gap-2 p-2.5 border-b border-[#166FDD] bg-[#f3f3f4]">
+                <select id="fComuna"
+                    class="bg-white text-[#1a1c1c] border border-[#166FDD] font-['Archivo_Narrow'] text-xs font-semibold p-2 flex-1 min-w-[110px] uppercase tracking-wider cursor-pointer rounded-none focus:outline-none focus:ring-2 focus:ring-[#166FDD]">
+                    <option value="">Comuna</option>
+                </select>
+                <select id="fPropietario"
+                    class="bg-white text-[#1a1c1c] border border-[#166FDD] font-['Archivo_Narrow'] text-xs font-semibold p-2 flex-1 min-w-[110px] uppercase tracking-wider cursor-pointer rounded-none focus:outline-none focus:ring-2 focus:ring-[#166FDD]">
+                    <option value="">Propietario</option>
+                </select>
+                <select id="fEmpresa"
+                    class="bg-white text-[#1a1c1c] border border-[#166FDD] font-['Archivo_Narrow'] text-xs font-semibold p-2 flex-1 min-w-[110px] uppercase tracking-wider cursor-pointer rounded-none focus:outline-none focus:ring-2 focus:ring-[#166FDD]">
+                    <option value="">Empresa Controladora</option>
+                </select>
+                <select id="fEstado"
+                    class="bg-white text-[#1a1c1c] border border-[#166FDD] font-['Archivo_Narrow'] text-xs font-semibold p-2 flex-1 min-w-[110px] uppercase tracking-wider cursor-pointer rounded-none focus:outline-none focus:ring-2 focus:ring-[#166FDD]">
+                    <option value="">Estado</option>
+                    <option value="En operación">🟢 En Operación</option>
+                    <option value="En construccion">🟠 En Construcción</option>
+                    <option value="Proyecto">🔵 Proyecto</option>
+                </select>
+                <select id="fClasificacion"
+                    class="bg-white text-[#1a1c1c] border border-[#166FDD] font-['Archivo_Narrow'] text-xs font-semibold p-2 flex-1 min-w-[110px] uppercase tracking-wider cursor-pointer rounded-none focus:outline-none focus:ring-2 focus:ring-[#166FDD]">
+                    <option value="">Tamaño (MW)</option>
+                    <option value="pequeno">Pequeño (≤ 10 MW)</option>
+                    <option value="mediano">Mediano (10–40 MW)</option>
+                    <option value="grande">Grande (≥ 40 MW)</option>
+                </select>
+                <button id="btnReset"
+                    class="bg-[#166FDD] text-white font-['Archivo_Narrow'] text-xs font-bold px-3 py-2 uppercase tracking-wider hover:bg-[#F66C1A] transition-colors rounded-none">
+                    Limpiar
+                </button>
+            </div>
+
+            <!-- Map Wrapper -->
+            <div class="flex flex-col lg:flex-row min-h-[580px] bg-white">
+
+                <!-- Leyenda -->
+                <div
+                    class="w-full lg:w-[200px] bg-[#f3f3f4] p-3.5 flex flex-col gap-3 border-b lg:border-b-0 lg:border-r border-[#166FDD] shrink-0 text-xs font-['Archivo_Narrow']">
+
+                    <div
+                        class="font-bold text-[12px] uppercase tracking-wider text-[#166FDD] border-b border-[#166FDD] pb-1.5">
+                        📊 Leyenda
+                    </div>
+
+                    <!-- Estado -->
+                    <div class="flex flex-col gap-1.5">
+                        <span class="font-semibold uppercase text-[10px] text-[#4c4546]">Estado</span>
+
+                        <div class="legend-item flex items-center gap-2.5 py-1.5 px-1.5"
+                            data-estado="En operación" title="Filtrar por En Operación">
+                            <div class="w-4 h-4 rounded-full bg-[#16A34A] border-2 border-white shadow-sm shrink-0"></div>
+                            <span class="text-[11px] font-bold text-[#1a1c1c] uppercase flex-1">En Operación</span>
+                            <span class="legend-count text-[#16A34A]" id="countOperacion">(0)</span>
+                        </div>
+
+                        <div class="legend-item flex items-center gap-2.5 py-1.5 px-1.5"
+                            data-estado="En construccion" title="Filtrar por En Construcción">
+                            <div class="w-4 h-4 rounded-full bg-[#F66C1A] border-2 border-white shadow-sm shrink-0"></div>
+                            <span class="text-[11px] font-bold text-[#1a1c1c] uppercase flex-1">En Construcción</span>
+                            <span class="legend-count text-[#F66C1A]" id="countConstruccion">(0)</span>
+                        </div>
+
+                        <div class="legend-item flex items-center gap-2.5 py-1.5 px-1.5"
+                            data-estado="Proyecto" title="Filtrar por Proyecto">
+                            <div class="w-4 h-4 rounded-full bg-[#166FDD] border-2 border-white shadow-sm shrink-0"></div>
+                            <span class="text-[11px] font-bold text-[#1a1c1c] uppercase flex-1">Proyecto</span>
+                            <span class="legend-count text-[#166FDD]" id="countProyecto">(0)</span>
+                        </div>
+                    </div>
+
+                    <!-- Cluster -->
+                    <div class="flex flex-col gap-1.5 pt-2 border-t border-[#166FDD]/20">
+                        <span class="font-semibold uppercase text-[10px] text-[#4c4546]">Agrupación (Cluster)</span>
+                        <div class="flex items-center gap-2.5 py-1">
+                            <div
+                                class="w-6 h-6 rounded-full bg-[#F66C1A] border-2 border-white shadow-sm shrink-0 flex items-center justify-center text-white text-[10px] font-bold">
+                                N</div>
+                            <span class="text-[11px] font-bold text-[#1a1c1c] uppercase">Cercanos</span>
+                        </div>
+                    </div>
+
+                    <!-- Tamaño por MW máximo (clickeable) -->
+                    <div class="flex flex-col gap-1.5 pt-2 border-t border-[#166FDD]/20">
+                        <span class="font-semibold uppercase text-[10px] text-[#4c4546]">Tamaño por MW máximo</span>
+
+                        <div class="legend-item flex items-center gap-2.5 py-1 px-1.5" data-clasif="pequeno" title="Filtrar Pequeño">
+                            <div class="rounded-full border-2 border-[#4c4546] bg-transparent shrink-0"
+                                style="width:12px;height:12px;"></div>
+                            <span class="text-[10px] font-bold text-[#1a1c1c] uppercase flex-1">Pequeño</span>
+                            <span class="text-[10px] text-[#4c4546]">≤ 10 MW</span>
+                        </div>
+
+                        <div class="legend-item flex items-center gap-2.5 py-1 px-1.5" data-clasif="mediano" title="Filtrar Mediano">
+                            <div class="rounded-full border-2 border-[#4c4546] bg-transparent shrink-0"
+                                style="width:18px;height:18px;"></div>
+                            <span class="text-[10px] font-bold text-[#1a1c1c] uppercase flex-1">Mediano</span>
+                            <span class="text-[10px] text-[#4c4546]">10–40 MW</span>
+                        </div>
+
+                        <div class="legend-item flex items-center gap-2.5 py-1 px-1.5" data-clasif="grande" title="Filtrar Grande">
+                            <div class="rounded-full border-2 border-[#4c4546] bg-transparent shrink-0"
+                                style="width:26px;height:26px;"></div>
+                            <span class="text-[10px] font-bold text-[#1a1c1c] uppercase flex-1">Grande</span>
+                            <span class="text-[10px] text-[#4c4546]">≥ 40 MW</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Mapa -->
+                <div id="map"></div>
+
+                <!-- Lista de Empresas -->
+                <div
+                    class="w-full lg:w-[280px] bg-[#f3f3f4] p-3 flex flex-col gap-2 border-t lg:border-t-0 lg:border-l border-[#166FDD] shrink-0 overflow-y-auto max-h-[580px]">
+                    <div
+                        class="font-['Archivo_Narrow'] text-[12px] font-bold uppercase tracking-wider text-[#166FDD] border-b border-[#166FDD] pb-1.5 flex justify-between items-center">
+                        <span>🏢 Lista de Empresas</span>
+                        <span class="text-[10px] font-normal text-[#4c4546]" id="empresaCount">0 titulares</span>
+                    </div>
+                    <div id="companyList" class="flex flex-col gap-1">
+                        <div class="text-xs text-[#7e7576] text-center py-4">Cargando empresas...</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RANKING TOP 5 COMUNAS -->
+            <div class="border-t border-[#166FDD] bg-[#f3f3f4] p-3">
+                <div class="flex justify-between items-center mb-2.5">
+                    <h3
+                        class="font-['Archivo_Narrow'] text-[12px] font-bold uppercase tracking-wider text-[#166FDD] flex items-center gap-2 m-0">
+                        🏆 TOP 5 COMUNAS CON MÁS DATA CENTERS
+                    </h3>
+                    <span class="text-[10px] font-['Archivo_Narrow'] font-semibold text-[#4c4546] uppercase tracking-wider"
+                        id="rankingSubtitle">—</span>
+                </div>
+                <div id="rankingComunas" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
+                    <!-- Dinámico -->
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // ================== VARIABLES GLOBALES ==================
+        let featuresData = [];
+        let mapInstance = null;
+        let markerClusterGroup = null;
+        let allMarkers = [];
+
+        const SIN_INFO = 'Sin información';
+
+        // ================== AUXILIARES ==================
+        function fmt(n) {
+            if (n === undefined || n === null || isNaN(n)) return '0';
+            return Number(n).toLocaleString('es-CL');
+        }
+
+        function normalizeText(val) {
+            if (val === undefined || val === null) return SIN_INFO;
+            const s = String(val).trim();
+            return s.length > 0 ? s : SIN_INFO;
+        }
+
+        function getEstadoColor(estado) {
+            const e = String(estado || '').toLowerCase();
+            if (e.includes('operaci')) return '#16A34A';
+            if (e.includes('construc')) return '#F66C1A';
+            if (e.includes('proyecto')) return '#166FDD';
+            return '#4c4546';
+        }
+
+        function getEstadoLabel(estado) {
+            const e = String(estado || '').toLowerCase();
+            if (e.includes('operaci')) return 'En Operación';
+            if (e.includes('construc')) return 'En Construcción';
+            if (e.includes('proyecto')) return 'Proyecto';
+            return estado || 'Sin Estado';
+        }
+
+        // ---- Clasificación MW ----
+        function getMWMax(props) {
+            const raw = props.MW_máximo;
+            if (raw === undefined || raw === null || String(raw).trim() === '') return 0;
+            // Extrae el primer número decimal del string (p. ej. "30–45 MW" -> 30; "~80 MW" -> 80)
+            const m = String(raw).replace(',', '.').match(/(\d+(?:\.\d+)?)/);
+            if (!m) return 0;
+            const n = parseFloat(m[1]);
+            return isNaN(n) ? 0 : n;
+        }
+
+        function getClasificacionMW(mw) {
+            if (mw <= 0) return { label: 'Sin dato', size: 10, color: '#9ca3af', key: 'sin' };
+            if (mw <= 10) return { label: 'Pequeño', size: 12, color: '#16A34A', key: 'pequeno' };
+            if (mw < 40) return { label: 'Mediano', size: 18, color: '#F66C1A', key: 'mediano' };
+            return { label: 'Grande', size: 26, color: '#166FDD', key: 'grande' };
+        }
+
+        function getMarkerStyle(props) {
+            const estado = String(props.Estado || '').toLowerCase();
+            const mw = getMWMax(props);
+            const clasif = getClasificacionMW(mw);
+
+            let className = 'data-marker-proyecto';
+            if (estado.includes('operaci')) className = 'data-marker-operacion';
+            else if (estado.includes('construc')) className = 'data-marker-construccion';
+
+            return { className, size: clasif.size, clasif };
+        }
+
+        function createPopupHTML(props) {
+            const estado = props.Estado || '';
+            const color = getEstadoColor(estado);
+            const label = getEstadoLabel(estado);
+
+            const mwMax = getMWMax(props);
+            const clasif = getClasificacionMW(mwMax);
+
+            const mwActual = props.MW_actual && String(props.MW_actual).trim() ? props.MW_actual : 'N/A';
+            const mwMaxTxt = mwMax > 0 ? `${mwMax} MW` : 'N/A';
+            const propietario = normalizeText(props.Propietari);
+            const empresaCl = normalizeText(props.Empresa_cl);
+            const direccion = props.Dirección && String(props.Dirección).trim() ? props.Dirección : 'N/A';
+
+            return `
+                <div class="font-['Hanken_Grotesk'] text-[#1a1c1c]">
+                    <div class="font-['Archivo_Narrow'] text-[11px] font-bold uppercase tracking-wider mb-1" style="color:${color}">
+                        ● ${label}
+                    </div>
+                    <h3 class="text-sm font-bold text-[#166FDD] leading-snug mb-2 border-b border-slate-200 pb-1.5">
+                        ${props.Nombre_Dat || 'Sin Nombre'}
+                    </h3>
+                    <div class="space-y-1 text-xs text-[#4c4546]">
+                        <div><b class="text-[#1a1c1c]">Propietario:</b> ${propietario}</div>
+                        <div><b class="text-[#1a1c1c]">Empresa:</b> ${empresaCl}</div>
+                        <div><b class="text-[#1a1c1c]">Tipo:</b> ${props.Tipo || 'N/A'}</div>
+                        <div><b class="text-[#1a1c1c]">Comuna:</b> ${props.Comuna || 'N/A'}</div>
+                        <div><b class="text-[#1a1c1c]">Dirección:</b> ${direccion}</div>
+                        <div><b class="text-[#1a1c1c]">MW actual:</b> <span class="font-bold text-[#F66C1A]">${mwActual}</span></div>
+                        <div><b class="text-[#1a1c1c]">MW máximo:</b> <span class="font-bold text-[#166FDD]">${mwMaxTxt}</span>
+                            <span class="ml-1 text-[10px] font-bold uppercase px-1.5 py-0.5"
+                                  style="background:${clasif.color}20; color:${clasif.color}; border:1px solid ${clasif.color}">
+                                ${clasif.label}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // 🔧 FIX: parsea "lat, lon" del campo properties.Coordenada
+        // y valida rango geográfico de Chile. Devuelve {lat, lon} o null.
+        function parseCoordenadaString(str) {
+            if (str === undefined || str === null) return null;
+            const s = String(str).trim();
+            if (s === '' || s === 'NO INFORMA') return null;
+            const parts = s.split(',').map(x => parseFloat(x.trim()));
+            if (parts.length !== 2 || isNaN(parts[0]) || isNaN(parts[1])) return null;
+            let [lat, lon] = parts;
+            // Corrección de signos obvios
+            if (lat > 0) lat = -Math.abs(lat);
+            if (lon > 0) lon = -Math.abs(lon);
+            // Validar rango Chile (continental + islas)
+            if (lat < -56 || lat > -17) return null;
+            if (lon < -110 || lon > -66) return null;
+            return { lat, lon };
+        }
+
+        // ================== INICIALIZACIÓN ==================
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('data/datacenter.json')
+                .then(res => {
+                    if (!res.ok) throw new Error('No se pudo cargar data/datacenter.json');
+                    return res.json();
+                })
+                .then(data => {
+                    let descartados = 0;
+
+                    featuresData = (data.features || [])
+                        .map(f => {
+                            const props = f.properties || {};
+
+                            // 1) Preferimos SIEMPRE properties.Coordenada (lat, lon en grados)
+                            let coord = parseCoordenadaString(props.Coordenada);
+
+                            // 2) Fallback: geometry.coordinates SOLO si está en rango válido (GeoJSON: [lon, lat])
+                            if (!coord && f.geometry && Array.isArray(f.geometry.coordinates) && f.geometry.coordinates.length === 2) {
+                                const [lon, lat] = f.geometry.coordinates;
+                                if (!isNaN(lon) && !isNaN(lat) &&
+                                    lat >= -56 && lat <= -17 &&
+                                    lon >= -110 && lon <= -66) {
+                                    coord = { lat, lon };
+                                }
+                            }
+
+                            if (!coord) {
+                                console.warn('⚠️ Descartado (sin coordenada válida):', props.Nombre_Dat || '(sin nombre)', '| Coordenada:', props.Coordenada);
+                                descartados++;
+                                return null;
+                            }
+
+                            return {
+                                type: 'Feature',
+                                geometry: { type: 'Point', coordinates: [coord.lon, coord.lat] },
+                                properties: props
+                            };
+                        })
+                        .filter(Boolean);
+
+                    // Normalizar textos
+                    featuresData.forEach(f => {
+                        f.properties.Propietari = normalizeText(f.properties.Propietari);
+                        f.properties.Empresa_cl = normalizeText(f.properties.Empresa_cl);
+                    });
+
+                    console.log(`✅ ${featuresData.length} data centers cargados | 🗑️ ${descartados} descartados`);
+                    initApp();
+                })
+                .catch(err => {
+                    console.error('Error cargando datos:', err);
+                    document.getElementById('mapCount').textContent = 'Error al cargar datos';
+                    document.getElementById('companyList').innerHTML =
+                        '<div class="text-xs text-red-500 text-center py-4">Error al cargar data/datacenter.json<br><span class="text-[10px]">Abre con un servidor local (python -m http.server 8000), no con file://</span></div>';
+                });
+        });
+
+        function initApp() {
+            fillSelects();
+            initMap();
+            initLegendClicks();
+            initSizeLegendClicks();
+        }
+
+        // ================== FILTROS ==================
+        function fillSelects() {
+            const comunas = [...new Set(featuresData.map(f => f.properties.Comuna).filter(Boolean))].sort();
+            const propietarios = [...new Set(featuresData.map(f => f.properties.Propietari))].sort();
+            const empresas = [...new Set(featuresData.map(f => f.properties.Empresa_cl))].sort();
+
+            const selC = document.getElementById('fComuna');
+            comunas.forEach(c => selC.appendChild(new Option(c, c)));
+
+            const selP = document.getElementById('fPropietario');
+            propietarios.forEach(p => selP.appendChild(new Option(p.length > 30 ? p.substring(0, 27) + '…' : p, p)));
+
+            const selE = document.getElementById('fEmpresa');
+            empresas.forEach(e => selE.appendChild(new Option(e.length > 30 ? e.substring(0, 27) + '…' : e, e)));
+
+            ['fComuna', 'fPropietario', 'fEmpresa', 'fEstado', 'fClasificacion'].forEach(id => {
+                document.getElementById(id).addEventListener('change', applyFilters);
+            });
+
+            document.getElementById('btnReset').addEventListener('click', () => {
+                ['fComuna', 'fPropietario', 'fEmpresa', 'fEstado', 'fClasificacion'].forEach(id => {
+                    document.getElementById(id).value = '';
+                });
+                applyFilters();
+            });
+        }
+
+        // ================== LEYENDA CLICKEABLE (ESTADO) ==================
+        function initLegendClicks() {
+            document.querySelectorAll('.legend-item[data-estado]').forEach(item => {
+                item.addEventListener('click', () => {
+                    const estado = item.dataset.estado;
+                    const sel = document.getElementById('fEstado');
+                    sel.value = (sel.value === estado) ? '' : estado;
+                    applyFilters();
+                });
+            });
+        }
+
+        // ================== LEYENDA CLICKEABLE (TAMAÑO) ==================
+        function initSizeLegendClicks() {
+            document.querySelectorAll('.legend-item[data-clasif]').forEach(item => {
+                item.addEventListener('click', () => {
+                    const clasif = item.dataset.clasif;
+                    const sel = document.getElementById('fClasificacion');
+                    sel.value = (sel.value === clasif) ? '' : clasif;
+                    applyFilters();
+                });
+            });
+        }
+
+        // ================== MAPA ==================
+        function initMap() {
+            mapInstance = L.map('map', {
+                center: [-33.45, -70.80],
+                zoom: 8,
+                minZoom: 5,
+                maxZoom: 18,
+                zoomControl: false
+            });
+
+            L.control.zoom({ position: 'topright' }).addTo(mapInstance);
+
+            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+            }).addTo(mapInstance);
+
+            markerClusterGroup = L.markerClusterGroup({
+                showCoverageOnHover: false,
+                zoomToBoundsOnClick: true,
+                spiderfyOnMaxZoom: true,
+                removeOutsideVisibleBounds: true,
+                animateAddingMarkers: true,
+                iconCreateFunction: function (cluster) {
+                    const count = cluster.getChildCount();
+                    return L.divIcon({
+                        html: `<div><span>${count}</span></div>`,
+                        className: 'marker-cluster',
+                        iconSize: new L.Point(40, 40)
+                    });
+                }
+            });
+
+            featuresData.forEach((feature) => {
+                const coords = feature.geometry.coordinates; // [lon, lat]
+                const props = feature.properties;
+
+                const { className, size } = getMarkerStyle(props);
+
+                const markerIcon = L.divIcon({
+                    className: className,
+                    iconSize: [size, size],
+                    iconAnchor: [size / 2, size / 2],
+                    html: `<div style="width:${size}px;height:${size}px;"></div>`
+                });
+
+                const marker = L.marker([coords[1], coords[0]], { icon: markerIcon });
+
+                marker.bindPopup(createPopupHTML(props), {
+                    className: 'custom-leaflet-popup',
+                    maxWidth: 340,
+                    minWidth: 220
+                });
+
+                marker.featureData = feature;
+                allMarkers.push(marker);
+            });
+
+            if (allMarkers.length > 0) {
+                markerClusterGroup.addLayers(allMarkers);
+                mapInstance.addLayer(markerClusterGroup);
+
+                const bounds = L.latLngBounds(allMarkers.map(m => m.getLatLng()));
+                mapInstance.fitBounds(bounds, { padding: [50, 50], maxZoom: 10 });
+            }
+
+            document.getElementById('mapCount').textContent = `${fmt(featuresData.length)} de ${fmt(featuresData.length)} data centers`;
+            updateCompanyList(featuresData);
+            updateRankingComunas(featuresData);
+            updateLegendCounts(featuresData);
+        }
+
+        // ================== CONTADORES DE LEYENDA ==================
+        function updateLegendCounts(data) {
+            let operacion = 0, construccion = 0, proyecto = 0;
+
+            data.forEach(f => {
+                const e = String(f.properties.Estado || '').toLowerCase();
+                if (e.includes('operaci')) operacion++;
+                else if (e.includes('construc')) construccion++;
+                else if (e.includes('proyecto')) proyecto++;
+            });
+
+            document.getElementById('countOperacion').textContent = `(${operacion})`;
+            document.getElementById('countConstruccion').textContent = `(${construccion})`;
+            document.getElementById('countProyecto').textContent = `(${proyecto})`;
+
+            const estadoActual = document.getElementById('fEstado').value;
+            document.querySelectorAll('.legend-item[data-estado]').forEach(item => {
+                item.classList.toggle('active', item.dataset.estado === estadoActual);
+            });
+
+            const clasifActual = document.getElementById('fClasificacion').value;
+            document.querySelectorAll('.legend-item[data-clasif]').forEach(item => {
+                item.classList.toggle('active', item.dataset.clasif === clasifActual);
+            });
+        }
+
+        // ================== FILTRAR ==================
+        function applyFilters() {
+            const fC = document.getElementById('fComuna').value;
+            const fP = document.getElementById('fPropietario').value;
+            const fE = document.getElementById('fEmpresa').value;
+            const fEst = document.getElementById('fEstado').value;
+            const fClas = document.getElementById('fClasificacion').value;
+
+            const filtered = featuresData.filter(f => {
+                const p = f.properties;
+                if (fC && p.Comuna !== fC) return false;
+                if (fP && p.Propietari !== fP) return false;
+                if (fE && p.Empresa_cl !== fE) return false;
+                if (fEst && p.Estado !== fEst) return false;
+                if (fClas) {
+                    const clasif = getClasificacionMW(getMWMax(p));
+                    if (clasif.key !== fClas) return false;
+                }
+                return true;
+            });
+
+            markerClusterGroup.clearLayers();
+
+            const filteredMarkers = allMarkers.filter(marker => {
+                const props = marker.featureData.properties;
+                if (fC && props.Comuna !== fC) return false;
+                if (fP && props.Propietari !== fP) return false;
+                if (fE && props.Empresa_cl !== fE) return false;
+                if (fEst && props.Estado !== fEst) return false;
+                if (fClas) {
+                    const clasif = getClasificacionMW(getMWMax(props));
+                    if (clasif.key !== fClas) return false;
+                }
+                return true;
+            });
+
+            if (filteredMarkers.length > 0) {
+                markerClusterGroup.addLayers(filteredMarkers);
+                const bounds = L.latLngBounds(filteredMarkers.map(m => m.getLatLng()));
+                mapInstance.fitBounds(bounds, { padding: [50, 50], maxZoom: 11 });
+            }
+
+            document.getElementById('mapCount').textContent = `${fmt(filtered.length)} de ${fmt(featuresData.length)} data centers`;
+            updateCompanyList(filtered);
+            updateRankingComunas(filtered);
+
+            const dataParaLeyenda = featuresData.filter(f => {
+                const p = f.properties;
+                if (fC && p.Comuna !== fC) return false;
+                if (fP && p.Propietari !== fP) return false;
+                if (fE && p.Empresa_cl !== fE) return false;
+                if (fClas) {
+                    const clasif = getClasificacionMW(getMWMax(p));
+                    if (clasif.key !== fClas) return false;
+                }
+                return true;
+            });
+            updateLegendCounts(dataParaLeyenda);
+        }
+
+        // ================== LISTA DE EMPRESAS ==================
+        function updateCompanyList(data) {
+            const companyListEl = document.getElementById('companyList');
+            companyListEl.innerHTML = '';
+
+            const propCounts = {};
+            data.forEach(d => {
+                const p = normalizeText(d.properties.Propietari);
+                propCounts[p] = (propCounts[p] || 0) + 1;
+            });
+
+            const sortedProps = Object.entries(propCounts).sort((a, b) => b[1] - a[1]);
+            document.getElementById('empresaCount').textContent = `${sortedProps.length} titulares`;
+
+            if (sortedProps.length === 0) {
+                companyListEl.innerHTML =
+                    '<div class="text-xs text-[#7e7576] text-center py-4">No hay empresas bajo el filtro</div>';
+                return;
+            }
+
+            sortedProps.forEach(([empresa, count], idx) => {
+                const item = document.createElement('div');
+                item.className =
+                    'flex items-center justify-between p-2 bg-white border border-[#166FDD]/30 hover:border-[#166FDD] hover:bg-[#f9f9f9] cursor-pointer transition-colors';
+                item.title = `Filtrar por ${empresa}`;
+
+                item.onclick = () => {
+                    document.getElementById('fPropietario').value = empresa;
+                    applyFilters();
+                };
+
+                item.innerHTML = `
+                    <div class="flex items-center gap-2 overflow-hidden pr-2">
+                        <span class="font-['Archivo_Narrow'] text-xs font-bold text-[#166FDD] w-4 shrink-0">${idx + 1}.</span>
+                        <span class="font-['Hanken_Grotesk'] text-xs font-semibold text-[#1a1c1c] truncate">${empresa}</span>
+                    </div>
+                    <span class="font-['Archivo_Narrow'] text-[10px] font-bold text-[#166FDD] bg-[#f4f4f4] border border-[#166FDD]/40 px-2 py-0.5 uppercase shrink-0">
+                        ${count} ${count === 1 ? 'DC' : 'DCs'}
+                    </span>
+                `;
+                companyListEl.appendChild(item);
+            });
+        }
+
+        // ================== RANKING TOP 5 COMUNAS ==================
+        function updateRankingComunas(data) {
+            const container = document.getElementById('rankingComunas');
+            const subtitle = document.getElementById('rankingSubtitle');
+            container.innerHTML = '';
+
+            const comunaCounts = {};
+            data.forEach(d => {
+                const c = (d.properties.Comuna || '').trim();
+                if (!c) return;
+                comunaCounts[c] = (comunaCounts[c] || 0) + 1;
+            });
+
+            const sorted = Object.entries(comunaCounts).sort((a, b) => b[1] - a[1]);
+            const top5 = sorted.slice(0, 5);
+
+            if (top5.length === 0) {
+                container.innerHTML =
+                    '<div class="col-span-full text-xs text-[#7e7576] text-center py-3">Sin datos para el ranking</div>';
+                subtitle.textContent = '—';
+                return;
+            }
+
+            subtitle.textContent = `${sorted.length} comunas en total · mostrando top ${top5.length}`;
+
+            const maxCount = top5[0][1];
+            const rankColors = ['#F66C1A', '#166FDD', '#16A34A', '#7c3aed', '#0891b2'];
+
+            top5.forEach(([comuna, count], idx) => {
+                const pct = maxCount > 0 ? (count / maxCount) * 100 : 0;
+                const color = rankColors[idx] || '#4c4546';
+
+                const card = document.createElement('div');
+                card.className =
+                    'rank-card bg-white border border-[#166FDD]/30 p-2.5 flex flex-col gap-1.5';
+                card.title = `Filtrar por ${comuna}`;
+                card.onclick = () => {
+                    document.getElementById('fComuna').value = comuna;
+                    applyFilters();
+                };
+
+                card.innerHTML = `
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-2 min-w-0">
+                            <span class="font-['Archivo_Narrow'] text-lg font-bold leading-none shrink-0" style="color:${color}">
+                                ${idx + 1}
+                            </span>
+                            <span class="font-['Archivo_Narrow'] text-xs font-bold uppercase tracking-wider text-[#1a1c1c] truncate">
+                                ${comuna}
+                            </span>
+                        </div>
+                        <span class="font-['Archivo_Narrow'] text-sm font-bold shrink-0" style="color:${color}">
+                            ${count}
+                        </span>
+                    </div>
+                    <div class="w-full h-1.5 bg-[#f3f3f4] overflow-hidden">
+                        <div class="h-full transition-all" style="width:${pct}%; background-color:${color};"></div>
+                    </div>
+                    <div class="font-['Hanken_Grotesk'] text-[10px] text-[#4c4546] uppercase tracking-wider">
+                        ${count === 1 ? 'data center' : 'data centers'}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+    </script>
+</body>
+
+</html>
